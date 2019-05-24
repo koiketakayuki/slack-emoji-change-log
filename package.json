@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/koiketakayuki/slack-emoji-change-log/issues"
   },
-  "homepage": "https://github.com/koiketakayuki/slack-emoji-change-log#readme"
+  "homepage": "https://github.com/koiketakayuki/slack-emoji-change-log#readme",
+  "dependencies": {
+    "@slack/rtm-api": "^5.0.1"
+  }
 }
