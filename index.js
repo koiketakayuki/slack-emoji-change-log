@@ -12,7 +12,7 @@ rtm.on('emoji_changed', (event) => {
   if (event.subtype === 'add') {
     const emojiName = event.name;
 
-    rtm.sendMessage(`:${emojiName}:が追加されました`, channelId);
+    rtm.sendMessage(`:${emojiName}: ( \`:${emojiName}:\` ) が追加されました`, channelId);
   }
 });
 
