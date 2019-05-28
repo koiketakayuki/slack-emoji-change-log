@@ -18,7 +18,7 @@ rtm.on('emoji_changed', (event) => {
   if (event.subtype === 'remove') {
     const emojiNames = event.names;
 
-    emojiNames.forEach(function(emojiName){
+    emojiNames.forEach((emojiName) => {
       rtm.sendMessage(`\`:${emojiName}:\` が削除されました`, channelId);
     });
   }
