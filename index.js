@@ -14,6 +14,14 @@ rtm.on('emoji_changed', (event) => {
 
     rtm.sendMessage(`:${emojiName}: ( \`:${emojiName}:\` ) が追加されました`, channelId);
   }
+
+  if (event.subtype === 'remove') {
+    const emojiNames = event.names;
+
+    emojiNames.forEach((emojiName) => {
+      rtm.sendMessage(`\`:${emojiName}:\` が削除されました`, channelId);
+    });
+  }
 });
 
 (async () => {
