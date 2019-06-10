@@ -22,7 +22,7 @@ class EmojiStatus {
   toAttachments() {
     const attachments = this.histories.map(h => ({
       color: "good",
-      title: `<@${h.userId}>が<#${h.channelId}>で:${this.emojiName}:を使用しました`,
+      title: `<@${h.userId}> が <#${h.channelId}> で使いました`,
       ts: h.timestamp,
       text: h.permalink
     }));
@@ -30,7 +30,7 @@ class EmojiStatus {
     if (this.isRemoved) {
       attachments.push({
         color: "danger",
-        text:  `\`:${this.emojiName}:\`が削除されました`,
+        text:  `\`:${this.emojiName}:\` が削除されました`,
       })
     }
 
