@@ -6,6 +6,7 @@ const token = process.env.SLACK_BOT_TOKEN;
 const channelId = process.env.CHANNEL_ID;
 const slackSigningSecret = process.env.SLACK_SIGNING_SECRET;
 const port = process.env.PORT;
+const secondsToMonitorEmojiUse = 300;
 
 const slackEvents = createEventAdapter(slackSigningSecret);
 const web = new WebClient(token);
@@ -50,7 +51,7 @@ slackEvents.on('emoji_changed', async (event) => {
 
     setTimeout(() => {
       delete emojiStatuses[emojiName];
-    }, 300000);
+    }, secondsToMonitorEmojiUse * 1000);
   }
 
   if (event.subtype === 'remove') {
