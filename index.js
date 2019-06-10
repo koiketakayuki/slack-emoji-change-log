@@ -4,7 +4,7 @@ const EmojiStatus = require("./emoji-status");
 
 const token = process.env.SLACK_BOT_TOKEN;
 const channelId = process.env.CHANNEL_ID;
-const slackSigningSecret = process.env.SLACK_SIGNIN_SECRET;
+const slackSigningSecret = process.env.SLACK_SIGNING_SECRET;
 const port = process.env.PORT;
 
 const slackEvents = createEventAdapter(slackSigningSecret);
