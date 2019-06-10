@@ -14,7 +14,7 @@ $ npm install
 #### Set ENVs
 
 - `SLACK_BOT_TOKEN`
-  - "Bot User OAuth Access Token" within "App Credentials" of your Slack App
+  - "Bot User OAuth Access Token" within "OAuth Tokens & Redirect URLs" of your Slack App
 - `SLACK_SIGNING_SECRET`
   - "Signing Secret" within "App Credentials" of your Slack App
 - `CHANNEL_ID`
