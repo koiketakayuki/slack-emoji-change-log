@@ -39,7 +39,7 @@ slackEvents.on('emoji_changed', async (event) => {
 
     const status = new EmojiStatus(emojiName, channelId);
     const { ts } = await web.chat.postMessage({
-      blocks: status.toBlocks(),
+      text: status.toText(),
       channel: channelId,
     });
 

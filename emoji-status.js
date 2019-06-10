@@ -15,16 +15,12 @@ class EmojiStatus {
     this.isRemoved = true;
   }
 
+  toText() {
+    return `:${this.emojiName}: ( \`:${this.emojiName}:\` ) が追加されました`
+  }
+
   toBlocks() {
     const blocks = [];
-
-    blocks.push({
-      "type": "section",
-      "text": {
-        "type": "mrkdwn",
-        "text": `:${this.emojiName}: ( \`:${this.emojiName}:\` ) が追加されました`
-      }
-    })
 
     if (this.histories.length > 0) {
       this.histories.forEach(h => {
