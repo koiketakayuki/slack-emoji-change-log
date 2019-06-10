@@ -14,8 +14,9 @@ $ npm install
 #### Set ENVs
 
 - `SLACK_BOT_TOKEN`
-  - "Bot User OAuth Access Token" (created by Slack)
-  - You need to create an app of Slack from [here](https://api.slack.com/apps).
+  - "Bot User OAuth Access Token" within "App Credentials" of your Slack App
+- `SLACK_SIGNING_SECRET`
+  - "Signing Secret" within "App Credentials" of your Slack App
 - `CHANNEL_ID`
   - ID of channel which you want to post. ex: `CHD27GYN8`
   - You can get it from URL of channel like `https://hogehoge.slack.com/messages/CHD27GYN8`.
