@@ -23,12 +23,13 @@ slackEvents.on('reaction_added', async (event) => {
       message_ts: event.item.ts
     });
 
-    status.addHistory(event.user, event.item.channel, event.item.ts, permalink);
+    status.addHistory(event.user, event.item.channel, event.event_ts, permalink);
 
     await web.chat.update({
       channel: channelId,
       ts: status.timestamp,
-      blocks: status.toBlocks()
+      text: status.toText(),
+      attachments: status.toAttachments()
     });
   }
 });
@@ -40,6 +41,7 @@ slackEvents.on('emoji_changed', async (event) => {
     const status = new EmojiStatus(emojiName, channelId);
     const { ts } = await web.chat.postMessage({
       text: status.toText(),
+      attachments: status.toAttachments(),
       channel: channelId,
     });
 
@@ -62,7 +64,8 @@ slackEvents.on('emoji_changed', async (event) => {
         await web.chat.update({
           channel: channelId,
           ts: status.timestamp,
-          blocks: status.toBlocks()
+          text: status.toText(),
+          attachments: status.toAttachments()
         });
 
         delete emojiStatuses[emojiName];
