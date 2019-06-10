@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/koiketakayuki/slack-emoji-change-log#readme",
   "dependencies": {
-    "@slack/rtm-api": "^5.0.1"
+    "@slack/events-api": "^2.2.0",
+    "@slack/web-api": "^5.0.1"
   }
 }
